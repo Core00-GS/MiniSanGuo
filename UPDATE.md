@@ -344,3 +344,22 @@ UI创建早于 generals 加载完成
 世界状态独立化（World State）
 UI 与 数据完全解耦
 战场进入“只读渲染层”
+
+0.0.2.1｜系统级重构版（开发重点转折）
+
+🛠️ 修复内容（Bug Fixes）
+修复多个 IndentationError（缩进错误）
+第 583 行：for i,(title,val,color) in enumerate(card_data):
+第 598 行：cards.grid_columnconfigure(...)
+第 601 行：gov_frm = tk.Frame(...)
+统一调整了相关代码块的缩进层级，确保：
+循环体内部代码正确嵌套
+UI组件创建逻辑在正确作用域内
+修复因缩进错乱导致的程序无法启动问题
+🧹 代码结构优化
+规范了 for 循环与 UI 构建代码的层级关系
+提高代码可读性（避免混合缩进导致逻辑混乱）
+保证 tkinter 组件初始化顺序正确
+🚀 稳定性提升
+程序现在可以正常运行（不再因语法错误崩溃）
+UI布局逻辑更加稳定，减少潜在渲染问题
